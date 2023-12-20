@@ -32,9 +32,8 @@ class MainApp extends StatelessWidget {
               const Spacer(),
               const SizedBox(
                 width: 200,
-                height: 60,
+                height: 150,
                 child: SearchBar(
-                  //  shadowColor: Colors.white,
                   hintText: "Search",
                   hintStyle: MaterialStatePropertyAll(TextStyle(fontSize: 15)),
                   leading: Icon(Icons.search),
@@ -64,19 +63,110 @@ class MainApp extends StatelessWidget {
               image: AssetImage("assets/images/branch_BG.png"),
             ),
           ),
-          child: const Column(
+          child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(height: 120),
-              Text("Pastries",
-                  style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold)),
-              Text("5 delicicaties availible"),
-              Row(children: []),
-              Text("Explore Christmas"),
+              const SizedBox(height: 120),
+              const Text("Pastries",
+                  style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold)),
+              const Text(
+                "5 Delicicaties availible",
+                style: TextStyle(color: Colors.grey),
+              ),
+              SizedBox(
+                height: 220,
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
+                  children: const [
+                    PastriesBtn(buttonText: "Yule Log \n Cake"),
+                    SizedBox(width: 5),
+                    PastriesBtn(buttonText: "Grandmas \n Mince Pie"),
+                    SizedBox(width: 5),
+                    PastriesBtn(buttonText: "Christmas \n Muffin"),
+                    SizedBox(width: 5),
+                    PastriesBtn(buttonText: "Gingerbread \n man"),
+                  ],
+                ),
+              ),
+              const Text("Explore Christmas",
+                  style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold)),
+              SizedBox(
+                height: 220,
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
+                  children: const [
+                    ExploreChristmasBtn(buttonText: "Festive \n Ornaments"),
+                    SizedBox(width: 5),
+                    ExploreChristmasBtn(buttonText: "Christmas \n Presents"),
+                    SizedBox(width: 5),
+                    ExploreChristmasBtn(buttonText: "Seasonal \n Decoration"),
+                    SizedBox(width: 5),
+                    ExploreChristmasBtn(buttonText: "Perfect \n Outfits"),
+                    SizedBox(width: 5),
+                    ExploreChristmasBtn(buttonText: "Accessoire \n for NYE"),
+                  ],
+                ),
+              ),
             ],
           ),
         ),
+      ),
+    );
+  }
+}
+
+class PastriesBtn extends StatelessWidget {
+  final String buttonText;
+
+  const PastriesBtn({
+    Key? key,
+    required this.buttonText,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return ElevatedButton(
+      onPressed: () {},
+      style: ElevatedButton.styleFrom(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(40.0),
+        ),
+        backgroundColor: Colors.blue,
+        padding: const EdgeInsets.all(85),
+      ),
+      child: Text(
+        buttonText,
+        style:
+            const TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
+      ),
+    );
+  }
+}
+
+class ExploreChristmasBtn extends StatelessWidget {
+  final String buttonText;
+
+  const ExploreChristmasBtn({
+    Key? key,
+    required this.buttonText,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return ElevatedButton(
+      onPressed: () {},
+      style: ElevatedButton.styleFrom(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(40.0),
+        ),
+        backgroundColor: Colors.green,
+        padding: const EdgeInsets.all(85),
+      ),
+      child: Text(
+        buttonText,
+        style:
+            const TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
       ),
     );
   }
