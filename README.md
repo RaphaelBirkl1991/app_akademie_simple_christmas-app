@@ -1,6 +1,6 @@
 ![app_akademie_logo](app_akademie_logo.png)
 
-# little christmas app
+# Little Christmas-App
 
 This is an little group project made shortly before christmas.  
 
