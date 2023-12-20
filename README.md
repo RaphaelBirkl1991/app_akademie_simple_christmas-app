@@ -1,3 +1,7 @@
-# christmas_app
+![app_akademie_logo](app_akademie_logo.png)
 
-A new Flutter project.
+# little christmas app
+
+This is an little group project made shortly before christmas.  
+
+The Design was provided by Jean Paul Sota.
