@@ -79,13 +79,21 @@ class MainApp extends StatelessWidget {
                 child: ListView(
                   scrollDirection: Axis.horizontal,
                   children: const [
-                    PastriesBtn(buttonText: "Yule Log \n Cake"),
+                    PastriesBtn(
+                        imagepath: "assets/images/yule_cake.png",
+                        buttonText: "Yule Log \n Cake"),
                     SizedBox(width: 5),
-                    PastriesBtn(buttonText: "Grandmas \n Mince Pie"),
+                    PastriesBtn(
+                        imagepath: "assets/images/mince_pie.png",
+                        buttonText: "Grandmas \n Mince Pie"),
                     SizedBox(width: 5),
-                    PastriesBtn(buttonText: "Christmas \n Muffin"),
+                    PastriesBtn(
+                        imagepath: "assets/image/cup_cake.png",
+                        buttonText: "Christmas \n Muffin"),
                     SizedBox(width: 5),
-                    PastriesBtn(buttonText: "Gingerbread \n man"),
+                    PastriesBtn(
+                        imagepath: "assets/image/gingerbread_man.png",
+                        buttonText: "Gingerbread \n man"),
                   ],
                 ),
               ),
@@ -118,10 +126,12 @@ class MainApp extends StatelessWidget {
 
 class PastriesBtn extends StatelessWidget {
   final String buttonText;
+  final String imagepath;
 
   const PastriesBtn({
     Key? key,
     required this.buttonText,
+    required this.imagepath,
   }) : super(key: key);
 
   @override
@@ -135,11 +145,20 @@ class PastriesBtn extends StatelessWidget {
         backgroundColor: Colors.blue,
         padding: const EdgeInsets.all(85),
       ),
-      child: Text(
-        buttonText,
-        style:
-            const TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
-      ),
+      child: Column(children: [
+        Text(
+          buttonText,
+          style:
+              const TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
+        ),
+        Align(
+          alignment: Alignment.bottomRight,
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(30.0),
+            child: Image.asset(imagepath, fit: BoxFit.cover),
+          ),
+        ),
+      ]),
     );
   }
 }
