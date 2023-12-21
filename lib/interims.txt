@@ -1,8 +1,0 @@
- new ListView(scrollDirection: Axis.horizontal,
-                  children: <Widget>[
-                    new RaisedButton(onPressed: null,
-                    child: new Text("Facebook"),),
-                    new Padding(padding: new EdgeInsets.all(5.00)),
-                    new RaisedButton(onPressed: null,
-                    child: new Text("Google"),)
-                  ],)

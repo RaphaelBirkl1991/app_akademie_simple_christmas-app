@@ -12,4 +12,4 @@ The design-template:
 
 <img src="design-christmasapp_01.png" alt="design-template_01" width="500" height="280">
 
-<img src="design-christmasapp_02.png" alt="design-template_02" width="100" height="280">
+<img src="design-christmasapp_02.png" alt="design-template_02" width="125" height="280">

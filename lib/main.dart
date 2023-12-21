@@ -1,3 +1,6 @@
+import 'package:christmas_app/explore_christmas_btn.dart';
+import 'package:christmas_app/pastries_btn.dart';
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -69,11 +72,13 @@ class MainApp extends StatelessWidget {
             children: [
               const SizedBox(height: 120),
               const Text("Pastries",
-                  style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold)),
+                  style: TextStyle(fontSize: 33, fontWeight: FontWeight.bold)),
+              SizedBox(height: 25),
               const Text(
                 "5 Delicicaties availible",
-                style: TextStyle(color: Colors.grey),
+                style: TextStyle(color: Colors.grey, fontSize: 18),
               ),
+              SizedBox(height: 18),
               SizedBox(
                 height: 220,
                 child: ListView(
@@ -88,104 +93,54 @@ class MainApp extends StatelessWidget {
                         buttonText: "Grandmas \n Mince Pie"),
                     SizedBox(width: 5),
                     PastriesBtn(
-                        imagepath: "assets/image/cup_cake.png",
+                        imagepath: "assets/images/cup_cake.png",
                         buttonText: "Christmas \n Muffin"),
                     SizedBox(width: 5),
                     PastriesBtn(
-                        imagepath: "assets/image/gingerbread_man.png",
+                        imagepath: "assets/images/gingerbread_man.png",
                         buttonText: "Gingerbread \n man"),
                   ],
                 ),
               ),
+              SizedBox(height: 19),
               const Text("Explore Christmas",
                   style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold)),
+              SizedBox(height: 20),
               SizedBox(
-                height: 220,
+                height: 120,
                 child: ListView(
                   scrollDirection: Axis.horizontal,
                   children: const [
-                    ExploreChristmasBtn(buttonText: "Festive \n Ornaments"),
+                    ExploreChristmasBtn(
+                        buttonText: "Festive \n Ornaments",
+                        secondaryText: "Home supply",
+                        imagepath: "assets/images/santa.png"),
                     SizedBox(width: 5),
-                    ExploreChristmasBtn(buttonText: "Christmas \n Presents"),
+                    ExploreChristmasBtn(
+                        buttonText: "Christmas \n Presents",
+                        secondaryText: "Gift of Giving",
+                        imagepath: "assets/images/sleigh.png"),
                     SizedBox(width: 5),
-                    ExploreChristmasBtn(buttonText: "Seasonal \n Decoration"),
+                    ExploreChristmasBtn(
+                        buttonText: "Seasonal \n Decoration",
+                        secondaryText: "Home supply",
+                        imagepath: "assets/images/snowball.png"),
                     SizedBox(width: 5),
-                    ExploreChristmasBtn(buttonText: "Perfect \n Outfits"),
+                    ExploreChristmasBtn(
+                        buttonText: "Perfect \n Outfits",
+                        secondaryText: "Clothing",
+                        imagepath: "assets/images/glove.png"),
                     SizedBox(width: 5),
-                    ExploreChristmasBtn(buttonText: "Accessoire \n for NYE"),
+                    ExploreChristmasBtn(
+                        buttonText: "Accessoire \n for NYE",
+                        secondaryText: "Clothing",
+                        imagepath: "assets/images/party.png"),
                   ],
                 ),
               ),
             ],
           ),
         ),
-      ),
-    );
-  }
-}
-
-class PastriesBtn extends StatelessWidget {
-  final String buttonText;
-  final String imagepath;
-
-  const PastriesBtn({
-    Key? key,
-    required this.buttonText,
-    required this.imagepath,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return ElevatedButton(
-      onPressed: () {},
-      style: ElevatedButton.styleFrom(
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(40.0),
-        ),
-        backgroundColor: Colors.blue,
-        padding: const EdgeInsets.all(85),
-      ),
-      child: Column(children: [
-        Text(
-          buttonText,
-          style:
-              const TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
-        ),
-        Align(
-          alignment: Alignment.bottomRight,
-          child: ClipRRect(
-            borderRadius: BorderRadius.circular(30.0),
-            child: Image.asset(imagepath, fit: BoxFit.cover),
-          ),
-        ),
-      ]),
-    );
-  }
-}
-
-class ExploreChristmasBtn extends StatelessWidget {
-  final String buttonText;
-
-  const ExploreChristmasBtn({
-    Key? key,
-    required this.buttonText,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return ElevatedButton(
-      onPressed: () {},
-      style: ElevatedButton.styleFrom(
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(40.0),
-        ),
-        backgroundColor: Colors.green,
-        padding: const EdgeInsets.all(85),
-      ),
-      child: Text(
-        buttonText,
-        style:
-            const TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
       ),
     );
   }
