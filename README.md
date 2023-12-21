@@ -6,8 +6,10 @@ This is an little group project made shortly before christmas.
 
 The Design was provided by Jean Paul Sota.
 
-The design-template:  
+The design-template: 
 
-![design-template_01](design-christmasapp_01.png) [EOF]
 
-![design-template_02](design-christmasapp_02.png) [EOF]
+
+<img src="design-christmasapp_01.png" alt="design-template_01" width="500" height="280">
+
+<img src="design-christmasapp_02.png" alt="design-template_02" width="100" height="280">
