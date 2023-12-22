@@ -30,6 +30,7 @@ class ExploreChristmasBtn extends StatelessWidget {
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              SizedBox(height: 7),
               Text(
                 "Holiday Delicacies",
                 style: TextStyle(

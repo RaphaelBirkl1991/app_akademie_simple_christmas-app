@@ -1,14 +1,22 @@
-import 'package:christmas_app/explore_christmas_btn.dart';
+import 'package:christmas_app/green_raised_gradient_button.dart';
 import 'package:christmas_app/pastries_btn.dart';
+import 'package:christmas_app/blue_raised_gradient_button.dart';
 
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MainApp());
+  runApp(MainApp());
 }
 
 class MainApp extends StatelessWidget {
-  const MainApp({Key? key}) : super(key: key);
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+
+  MainApp({Key? key}) : super(key: key);
+
+  void openDrawer() {
+    print("FloatingActionButton wurde gedrückt");
+    _scaffoldKey.currentState?.openDrawer();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +37,7 @@ class MainApp extends StatelessWidget {
                     Icons.favorite,
                     color: Colors.black,
                   ),
-                  onPressed: () {},
+                  onPressed: openDrawer,
                 ),
               ),
               const Spacer(),
@@ -40,6 +48,7 @@ class MainApp extends StatelessWidget {
                   hintText: "Search",
                   hintStyle: MaterialStatePropertyAll(TextStyle(fontSize: 15)),
                   leading: Icon(Icons.search),
+                  //  overlayColor: Color(Color.fromRGBO(255, 255, 255, 1)),
                   padding:
                       MaterialStatePropertyAll<EdgeInsets>(EdgeInsets.all(8.0)),
                 ),
@@ -83,22 +92,34 @@ class MainApp extends StatelessWidget {
                 height: 220,
                 child: ListView(
                   scrollDirection: Axis.horizontal,
+                  clipBehavior: Clip.none,
                   children: const [
-                    PastriesBtn(
-                        imagepath: "assets/images/yule_cake.png",
-                        buttonText: "Yule Log \n Cake"),
-                    SizedBox(width: 5),
-                    PastriesBtn(
-                        imagepath: "assets/images/mince_pie.png",
-                        buttonText: "Grandmas \n Mince Pie"),
-                    SizedBox(width: 5),
-                    PastriesBtn(
-                        imagepath: "assets/images/cup_cake.png",
-                        buttonText: "Christmas \n Muffin"),
-                    SizedBox(width: 5),
-                    PastriesBtn(
+                    SizedBox(width: 15),
+                    RaisedGradientButton(
+                        imagepath2: "assets/images/mini_star.png",
+                        buttonText2: "Holiday Delicacies",
+                        buttonText: "Yule Log \n Cake",
+                        imagepath: "assets/images/yule_cake.png"),
+                    SizedBox(width: 15),
+                    RaisedGradientButton(
+                        imagepath2: "assets/images/mini_star.png",
+                        buttonText2: "Holiday Delicacies",
+                        buttonText: "Grandmas \n Mince Pie",
+                        imagepath: "assets/images/mince_pie.png"),
+                    SizedBox(width: 15),
+                    RaisedGradientButton(
+                      imagepath2: "assets/images/mini_star.png",
+                      buttonText2: "Holiday Delicacies",
+                      buttonText: "Christmas \n Muffin",
+                      imagepath: "assets/images/cup_cake.png",
+                    ),
+                    SizedBox(width: 15),
+                    RaisedGradientButton(
+                        imagepath2: "assets/images/mini_star.png",
                         imagepath: "assets/images/gingerbread_man.png",
-                        buttonText: "Gingerbread \n man"),
+                        buttonText: "Gingerbread \n man",
+                        buttonText2: "Holiday Delicies"),
+                    SizedBox(width: 15),
                   ],
                 ),
               ),
@@ -110,31 +131,36 @@ class MainApp extends StatelessWidget {
                 height: 120,
                 child: ListView(
                   scrollDirection: Axis.horizontal,
+                  clipBehavior: Clip.none,
                   children: const [
-                    ExploreChristmasBtn(
-                        buttonText: "Festive \n Ornaments",
-                        secondaryText: "Home supply",
-                        imagepath: "assets/images/santa.png"),
-                    SizedBox(width: 5),
-                    ExploreChristmasBtn(
+                    SizedBox(width: 15),
+                    GreenRaisedGradientButton(
+                      buttonText: "Festive \n Ornaments",
+                      buttonText2: "Home supply",
+                      imagepath: "assets/images/santa.png",
+                      //  imagepath2: "",
+                    ),
+                    SizedBox(width: 15),
+                    GreenRaisedGradientButton(
                         buttonText: "Christmas \n Presents",
-                        secondaryText: "Gift of Giving",
+                        buttonText2: "Gift of Giving",
                         imagepath: "assets/images/sleigh.png"),
-                    SizedBox(width: 5),
-                    ExploreChristmasBtn(
+                    SizedBox(width: 15),
+                    GreenRaisedGradientButton(
                         buttonText: "Seasonal \n Decoration",
-                        secondaryText: "Home supply",
+                        buttonText2: "Home supply",
                         imagepath: "assets/images/snowball.png"),
-                    SizedBox(width: 5),
-                    ExploreChristmasBtn(
+                    SizedBox(width: 15),
+                    GreenRaisedGradientButton(
                         buttonText: "Perfect \n Outfits",
-                        secondaryText: "Clothing",
+                        buttonText2: "Clothing",
                         imagepath: "assets/images/glove.png"),
-                    SizedBox(width: 5),
-                    ExploreChristmasBtn(
+                    SizedBox(width: 15),
+                    GreenRaisedGradientButton(
                         buttonText: "Accessoire \n for NYE",
-                        secondaryText: "Clothing",
+                        buttonText2: "Clothing",
                         imagepath: "assets/images/party.png"),
+                    SizedBox(width: 15),
                   ],
                 ),
               ),
