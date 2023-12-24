@@ -18,7 +18,7 @@ class PastriesBtn extends StatelessWidget {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(40.0),
         ),
-        backgroundColor: Color.fromRGBO(90, 128, 164, 1),
+        backgroundColor: const Color.fromRGBO(90, 128, 164, 1),
         padding: const EdgeInsets.all(20),
       ),
       child: Stack(
