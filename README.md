@@ -19,4 +19,4 @@
 <img src="assets/markdown-assets/flutter-screen.png" alt="screenshot-flutter app">
 
 
-### The drawer isn't implemented by now. I will add him later, when I find the time
+### The drawer isn't implemented by now. I will add him later.
